@@ -37,6 +37,7 @@ api.vm.stop(uuid)
 
 api.vm.clone(uuid, name)
 api.vm.toggle_backup(uuid)
+api.vm.rebuild(uuid, replica_uuid)
 ```
 
 ---

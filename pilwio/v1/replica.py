@@ -52,3 +52,5 @@ class Replica:
         response = requests.delete(self.endpoint, headers=self.headers, data=data)
 
         return response.json()
+
+    
