@@ -11,15 +11,20 @@ __email__ = "borka.orlov@fieldforce.com"
 __status__ = "Development"
 
 class V1(object):
+    """Pilw.io API v1 python wrapper
+    
+    Arguments:
+        apikey {String} -- API key
+    """
 
     ENDPOINT = 'https://app.pilw.io:8443/v1'
 
     def __init__(self, apikey):
         self.apikey = apikey
-        self.init_submodules(apikey)
+        self._init_submodules(apikey)
         
 
-    def init_submodules(self, apikey):
+    def _init_submodules(self, apikey):
         self.vm = v1.VM(apikey, self.ENDPOINT)
         self.replica = v1.Replica(apikey, self.ENDPOINT)
         self.token = v1.Token(apikey, self.ENDPOINT)
@@ -40,5 +45,10 @@ class V1(object):
 
 
     def set_apikey(self, apikey):
+        """Set a new API key
+        
+        Arguments:
+            apikey {String} -- API key
+        """
         self.apikey = apikey
-        self.init_submodules(apikey)
+        self._init_submodules(apikey)

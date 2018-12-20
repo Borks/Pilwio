@@ -1,4 +1,4 @@
-# Pilwio API Python wrapper.
+# Pilw.io API Python wrapper.
 
 ## Python Requirements
 > requests
