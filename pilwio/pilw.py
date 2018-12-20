@@ -1,5 +1,14 @@
+#!/usr/bin/env python
+"""Pilw.io API python wrapper"""
+
+import requests
 import pilwio.v1 as v1
-import requests 
+
+__author__ = "Borka Martin Orlov"
+__version__ = "0.1.0"
+__maintainer__ = "Borka Martin Orlov"
+__email__ = "borka.orlov@fieldforce.com"
+__status__ = "Development"
 
 class V1(object):
 
