@@ -1,15 +1,15 @@
 import requests
 
 class Billing:
-
+    """Billing
     
+    Arguments:
+        apikey {String} -- Api key
+        endpoint {String} -- Main api endpoint
+    """
+
+
     def __init__(self, apikey, endpoint):
-        """Billing
-        
-        Arguments:
-            apikey {String} -- Api key
-            endpoint {String} -- Main api endpoint
-        """
         self.apikey = apikey
         self.endpoint = endpoint + '/user-resource'
         self.headers = {"apikey": apikey}

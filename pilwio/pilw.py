@@ -5,7 +5,7 @@ import requests
 import pilwio.v1 as v1
 
 __author__ = "Borka Martin Orlov"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __maintainer__ = "Borka Martin Orlov"
 __email__ = "borka.orlov@fieldforce.com"
 __status__ = "Development"
@@ -29,8 +29,9 @@ class V1(object):
         self.replica = v1.Replica(apikey, self.ENDPOINT)
         self.token = v1.Token(apikey, self.ENDPOINT)
         self.billing = v1.Billing(apikey, self.ENDPOINT)
-        # self.payment = v1.payment(apikey, self.ENDPOINT)
-        # self.storage = v1.storage(apikey, self.ENDPOINT)
+        self.invoice = v1.Invoice(apikey, self.ENDPOINT)
+        self.billing_account = v1.BillingAccount(apikey, self.ENDPOINT)
+        self.card = v1.Card(apikey, self.ENDPOINT)
 
 
     def whoami(self):

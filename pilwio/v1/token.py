@@ -2,15 +2,13 @@ import requests
 
 class Token:
     """User API token management
+
+    Arguments:
+        apikey {String} -- Api key
+        endpoint {string} -- Main api endpoint
     """
 
     def __init__(self, apikey, endpoint):
-        """Init
-        
-        Arguments:
-            apikey {String} -- Api key
-            endpoint {string} -- Main api endpoint
-        """
         self.apikey = apikey
         self.endpoint = endpoint + '/user-resource/token'
         self.headers = {"apikey": apikey}

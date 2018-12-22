@@ -1,6 +1,12 @@
 import requests
 
 class Replica:
+    """Resource replica management 
+    
+    Arguments:
+        apikey {String} -- User API key
+        endpoint {String} -- Main API endpoint
+    """
 
 
     def __init__(self, apikey, endpoint):
