@@ -34,7 +34,7 @@ api.vm.show(uuid)
 
 api.vm.create(vm)
 api.vm.delete(uuid)
-api.vm.update(uuid, name, ram, vcpu) #TODO, use kwargs. hang tight
+api.vm.update(uuid, **kwargs) 
 api.vm.start(uuid)
 api.vm.stop(uuid)
 
@@ -62,7 +62,7 @@ api.replica.delete(uuid)
 ```python
 api.token.index()
 api.token.delete(token_id)
-api.token.update(token_id, description, restricted, billing_account_id)
+api.token.update(token_id, **kwargs)
 api.token.create(token)
 ```
 
