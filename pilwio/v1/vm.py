@@ -25,7 +25,7 @@ class VM:
         return response.json()
 
 
-    def update(self, uuid, name=False, ram=False, vcpu=False): 
+    def update(self, uuid, **kwargs): 
         """Update virtual machine
         
         Arguments:
@@ -39,11 +39,12 @@ class VM:
         Returns:
             Json -- Server json response
         """
+        ALLOWED_KWARGS = ['name', 'ram', 'vcpu']
         data = { 'uuid': uuid }
 
-        if name: data['name'] = name
-        if ram: data['ram'] = ram
-        if vcpu: data['vcpu'] = vcpu
+        for key, value in kwargs.items():
+            if key in ALLOWED_KWARGS:
+                data[key] = value
 
         response = requests.patch(self.endpoint, headers=self.headers, data=data)
 
