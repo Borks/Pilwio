@@ -25,6 +25,31 @@ class VM:
         return response.json()
 
 
+    def update(self, uuid, name=False, ram=False, vcpu=False): 
+        """Update virtual machine
+        
+        Arguments:
+            uuid {String} -- UUID of vm to change
+        
+        Keyword Arguments:
+            name {String} -- New VM name (default: {False})
+            ram {Integer} -- VM ram (default: {False})
+            vcpu {Integer} -- VM vCPU count (default: {False})
+        
+        Returns:
+            Json -- Server json response
+        """
+        data = { 'uuid': uuid }
+
+        if name: data['name'] = name
+        if ram: data['ram'] = ram
+        if vcpu: data['vcpu'] = vcpu
+
+        response = requests.patch(self.endpoint, headers=self.headers, data=data)
+
+        return response.json()
+
+
     def show(self, uuid):
         """Get single VM info
         
@@ -38,6 +63,7 @@ class VM:
         response = requests.get(self.endpoint, headers=self.headers, params=params)
 
         return response.json()
+
 
     def create(self, vm):
         """Create a new vm
@@ -96,6 +122,52 @@ class VM:
         """
         data = { 'uuid': uuid }
         response = requests.post( self.endpoint + '/stop', headers=self.headers, data=data ) 
+
+        return response.json()
+
+
+    def ips(self, uuid):
+        """Get virtual machine IPs
+        
+        Arguments:
+            uuid {String} -- VM uuid
+        
+        Returns:
+            Json -- Server json response
+        """
+        params = {'uuid': uuid}
+        response = requests.get(self.endpoint + '/ip', headers=self.headers, params=params)
+
+        return response.json()
+
+
+    def release_ip(self, uuid):
+        """Release a virtual machine's public IP address. 
+        The address is not reserved, it may be assigned to some other virtual machine at a later time.
+        
+        Arguments:
+            uuid {String} -- VM uuid
+        
+        Returns:
+            Json -- Server json response
+        """
+        data = {'uuid': uuid}
+        response = requests.delete(self.endpoint + '/ip/public', headers=self.headers, data=data)
+
+        return response.json()
+
+
+    def reserve_ip(self, uuid):
+        """Reserve and assign a public IP address for a virtual machine.
+        
+        Arguments:
+            uuid {String} -- VM uuid
+        
+        Returns:
+            Json -- Server jsoon response
+        """
+        data = {'uuid': uuid}
+        response = requests.post(self.endpoint + '/ip/public', headers=self.headers, data=data)
 
         return response.json()
 

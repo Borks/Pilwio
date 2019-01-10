@@ -34,8 +34,13 @@ api.vm.show(uuid)
 
 api.vm.create(vm)
 api.vm.delete(uuid)
+api.vm.update(uuid, name, ram, vcpu) #TODO, use kwargs. hang tight
 api.vm.start(uuid)
 api.vm.stop(uuid)
+
+api.vm.ips(uuid)
+api.vm.reserve_ip(uuid)
+api.vm.release_ip(uuid)
 
 api.vm.clone(uuid, name)
 api.vm.toggle_backup(uuid)
