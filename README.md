@@ -107,3 +107,16 @@ api.billing_account.update(account_id, account_data)
 api.billing_account.set_default(account_id)
 api.billing_account.get_unpaid(account_id)
 ```
+
+---
+
+### Storage
+```
+api.storage.url()
+api.storage.show(name)
+api.storage.index(billing_account_id) #param optional
+api.storage.user()
+api.storage.keys()
+api.storage.delete_key(key)
+api.storage.create_key()
+```

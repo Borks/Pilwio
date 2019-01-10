@@ -21,10 +21,10 @@ class V1(object):
 
     def __init__(self, apikey):
         self.apikey = apikey
-        self._init_submodules(apikey)
+        self.__init_submodules(apikey)
         
 
-    def _init_submodules(self, apikey):
+    def __init_submodules(self, apikey):
         self.vm = v1.VM(apikey, self.ENDPOINT)
         self.replica = v1.Replica(apikey, self.ENDPOINT)
         self.token = v1.Token(apikey, self.ENDPOINT)
@@ -32,6 +32,7 @@ class V1(object):
         self.invoice = v1.Invoice(apikey, self.ENDPOINT)
         self.billing_account = v1.BillingAccount(apikey, self.ENDPOINT)
         self.card = v1.Card(apikey, self.ENDPOINT)
+        self.storage = v1.Storage(apikey, self.ENDPOINT)
 
 
     def whoami(self):
@@ -52,4 +53,4 @@ class V1(object):
             apikey {String} -- API key
         """
         self.apikey = apikey
-        self._init_submodules(apikey)
+        self.__init_submodules(apikey)
