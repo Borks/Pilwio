@@ -58,20 +58,6 @@ class Card:
 
         return response.json()
 
-
-    def create(self, account_id, card):
-        """Attach a new credit card to a billing account
-        
-        Arguments:
-            account_id {Integer} -- Billing account ID
-            card {Dict} -- Credit card data
-        
-        Raises:
-            NotImplementedError -- The 'token' value at the api is confusing, 
-                skipping for now. 
-        """
-        raise NotImplementedError
-
     
     def set_primary(self, card_id):
         """Set a credit card as primary for billing account

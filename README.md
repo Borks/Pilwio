@@ -82,7 +82,6 @@ api.billing.update(uuid, id)
 api.card.index(account_id)
 api.card.delete(card_id)
 api.card.show(card_id)
-# api.card.create() Not implemented
 api.card.set_primary(card_id)
 ```
 
