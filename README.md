@@ -1,9 +1,10 @@
 # Pilw.io API wrapper. 
-
 Python wrapper for [Pilw.io API](https://developers.pilw.io/documentation/)
 
-## Python Requirements
-* requests
+---
+
+# Installation
+```pip install pilwio-api```
 
 --- 
 
