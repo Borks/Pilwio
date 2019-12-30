@@ -1,4 +1,4 @@
-# Pilw.io API wrapper. 
+# Pilw.io API wrapper.
 Python wrapper for [Pilw.io API](https://developers.pilw.io/documentation/)
 
 ---
@@ -6,7 +6,7 @@ Python wrapper for [Pilw.io API](https://developers.pilw.io/documentation/)
 # Installation
 ```pip install pilwio-api```
 
---- 
+---
 
 ## Usage
 
@@ -29,13 +29,13 @@ api.whoami()
 ### Virtual machines
 
 ```python
-api.vm.index() 
+api.vm.index()
 
 api.vm.show(uuid)
 
 api.vm.create(vm)
 api.vm.delete(uuid)
-api.vm.update(uuid, **kwargs) 
+api.vm.update(uuid, **kwargs)
 api.vm.start(uuid)
 api.vm.stop(uuid)
 
@@ -52,8 +52,8 @@ api.vm.rebuild(uuid, replica_uuid)
 
 ### Replicas
 ```python
-api.replica.index(uuid)
-api.replica.create(uuid)
+api.replica.index(uuid, *rtype)
+api.replica.create(uuid, *rtype)
 api.replica.delete(uuid)
 ```
 
@@ -95,7 +95,7 @@ api.invoice.show(invoice_id)
 api.invoice.pay_all(account_id)
 api.invoice.pay_amount(account_id, amount)
 api.invoice.pay_invoice(invoice_id)
-``` 
+```
 
 ---
 
