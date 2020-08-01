@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pilwio-api",
-    version="1.0.0",
+    version="1.0.2",
     author="Borka Martin Orlov",
     author_email="borka.orlov@gmail.com",
     description="Python API wrapper for pilw.io",

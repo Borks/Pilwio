@@ -1,9 +1,11 @@
-# Pilw.io API wrapper.
+# Pilw.io API wrapper
+
 Python wrapper for [Pilw.io API](https://developers.pilw.io/documentation/)
 
 ---
 
-# Installation
+## Installation
+
 ```pip install pilwio-api```
 
 ---
@@ -61,9 +63,11 @@ api.network.delete(ipv4)
 api.network.assign(ipv4,uuid)
 api.network.unassign(ipv4)
 ```
+
 ---
 
 ### Replicas
+
 ```python
 api.replica.index(uuid, *rtype)
 api.replica.create(uuid, *rtype)
@@ -73,6 +77,7 @@ api.replica.delete(uuid)
 ---
 
 ### Tokens
+
 ```python
 api.token.index()
 api.token.delete(token_id)
@@ -83,6 +88,7 @@ api.token.create(token)
 ---
 
 ### Resource Billing
+
 ```python
 api.billing.index(id)
 api.billing.info(uuid)
@@ -92,6 +98,7 @@ api.billing.update(uuid, id)
 ---
 
 ### Credit cards
+
 ```python
 api.card.index(account_id)
 api.card.delete(card_id)
@@ -102,6 +109,7 @@ api.card.set_primary(card_id)
 ---
 
 ### Invoices
+
 ```python
 api.invoice.index(id)
 api.invoice.show(invoice_id)
@@ -113,6 +121,7 @@ api.invoice.pay_invoice(invoice_id)
 ---
 
 ### Billing Accounts
+
 ```python
 api.billing_account.index()
 api.billing_account.show(account_id)
@@ -124,7 +133,8 @@ api.billing_account.get_unpaid(account_id)
 ---
 
 ### Storage
-```
+
+```python
 api.storage.url()
 api.storage.show(name)
 api.storage.index(billing_account_id) #param optional
