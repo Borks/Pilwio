@@ -50,6 +50,19 @@ api.vm.rebuild(uuid, replica_uuid)
 
 ---
 
+### Floating IP
+
+```python
+api.network.create(**kwargs)
+api.network.list()
+api.network.get(ipv4)
+api.network.update(ipv4, **kwargs)
+api.network.delete(ipv4)
+api.network.assign(ipv4,uuid)
+api.network.unassign(ipv4)
+```
+---
+
 ### Replicas
 ```python
 api.replica.index(uuid, *rtype)
